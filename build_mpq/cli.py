@@ -114,20 +114,20 @@ def main() -> int:
         epilog="""
 Examples:
   # Create full staging area (all categories)
-  build-mpq create ./my-patch-staging
+  build-mpq create patch-Z.MPQ
 
   # Create staging area for specific categories
   build-mpq create ./ui-patch --interface --fonts
   build-mpq create ./sound-patch --sound
 
   # Package the staging area into an MPQ
-  build-mpq package ./my-patch-staging ./patch-1.MPQ
+  build-mpq package patch-Z.MPQ patch-Z.mpq
 
   # Validate the MPQ structure
-  build-mpq validate ./patch-1.MPQ
+  build-mpq validate patch-Z.mpq
 
   # Validate with verbose output
-  build-mpq validate ./patch-1.MPQ --verbose
+  build-mpq validate patch-Z.mpq --verbose
 
 Note: Empty directories are automatically excluded during packaging.
 
@@ -178,7 +178,7 @@ Examples:
     create_parser.add_argument(
         "path",
         type=str,
-        help="Path where the staging area will be created",
+        help="Path where the staging area will be created (example: build-mpq create patch-Z.mpq)",
     )
     create_parser.add_argument(
         "-f", "--force",

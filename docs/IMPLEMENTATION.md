@@ -79,10 +79,10 @@ A CLI tool for building and validating World of Warcraft 3.3.5a client patch MPQ
 build-mpq create ./my-patch
 
 # Package MPQ
-build-mpq package ./my-patch ./patch-1.MPQ
+build-mpq package ./my-patch patch-Z.mpq
 
 # Validate MPQ
-build-mpq validate ./patch-1.MPQ --verbose
+build-mpq validate patch-Z.mpq --verbose
 ```
 
 ### Programmatic Usage
@@ -95,7 +95,7 @@ staging = Path("./my-patch")
 create_staging_area(staging)
 
 # Add files...
-output = Path("./patch-1.MPQ")
+output = Path("patch-Z.mpq")
 package_mpq(staging, output)
 validate_mpq(output)
 ```
@@ -226,8 +226,8 @@ To use this tool:
 1. Install: `pip install -e ".[dev]"`
 2. Create staging: `python -m build_mpq.cli create ./my-patch`
 3. Add files to staging area
-4. Package: `python -m build_mpq.cli package ./my-patch ./patch-1.MPQ`
-5. Validate: `python -m build_mpq.cli validate ./patch-1.MPQ`
+4. Package: `python -m build_mpq.cli package ./my-patch patch-Z.mpq`
+5. Validate: `python -m build_mpq.cli validate patch-Z.mpq`
 6. Deploy to WoW Data/ folder
 
 ## Maintenance

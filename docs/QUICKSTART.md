@@ -85,7 +85,7 @@ create_staging_area(staging)
 (staging / "DBFilesClient" / "MyData.dbc").write_bytes(dbc_data)
 
 # Package
-output = Path("./patch-1.MPQ")
+output = Path("patch-Z.mpq")
 package_mpq(staging, output)
 
 # Validate

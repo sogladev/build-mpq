@@ -43,7 +43,7 @@ pip install -e ".[dev]"
 Create the canonical WoW 3.3.5a directory structure:
 
 ```bash
-build-mpq create ./my-patch-staging
+build-mpq create patch-Z.MPQ
 ```
 
 This creates all 48 required directories for a complete patch.
@@ -76,7 +76,7 @@ build-mpq create ./dbc-patch --dbc
 **Force recreation** if it already exists:
 
 ```bash
-build-mpq create ./my-patch-staging --force
+build-mpq create patch-Z.MPQ --force
 ```
 
 ### 2. Add Your Files
@@ -87,9 +87,9 @@ Place your custom files in the appropriate directories within the staging area.
 
 ```bash
 # Copy files into staging area
-cp my_spell_icon.blp ./my-patch-staging/Interface/Icons/
-cp MyCustom.dbc ./my-patch-staging/DBFilesClient/
-cp my_music.mp3 ./my-patch-staging/Sound/Music/
+cp my_spell_icon.blp patch-Z.MPQ/Interface/Icons/
+cp MyCustom.dbc patch-Z.MPQ/DBFilesClient/
+cp my_music.mp3 patch-Z.MPQ/Sound/Music/
 ```
 
 **Option B: Use symbolic links** (recommended for development):
@@ -98,9 +98,9 @@ cp my_music.mp3 ./my-patch-staging/Sound/Music/
 
 ```bash
 # Link to your asset library (no duplication!)
-ln -s ~/wow-assets/custom/icons/*.blp ./my-patch-staging/Interface/Icons/
-ln -s ~/wow-assets/custom/Spell.dbc ./my-patch-staging/DBFilesClient/
-ln -s ~/wow-assets/music/*.mp3 ./my-patch-staging/Sound/Music/
+ln -s ~/wow-assets/custom/icons/*.blp patch-Z.MPQ/Interface/Icons/
+ln -s ~/wow-assets/custom/Spell.dbc patch-Z.MPQ/DBFilesClient/
+ln -s ~/wow-assets/music/*.mp3 patch-Z.MPQ/Sound/Music/
 
 # Symlinks are automatically resolved during packaging
 # The MPQ will contain the actual file data, not broken links
@@ -120,20 +120,20 @@ Note: By default packaging will *dereference* symlinks — we copy symlink targe
 Create an MPQ file from your staging area:
 
 ```bash
-build-mpq package ./my-patch-staging ./patch-1.MPQ
+build-mpq package patch-Z.MPQ patch-Z.mpq
 ```
 
 **With different compression:**
 
 ```bash
 # zlib compression (default, recommended)
-build-mpq package ./my-patch-staging ./patch-1.MPQ -c z
+build-mpq package patch-Z.MPQ patch-Z.mpq -c z
 
 # bzip2 compression (better compression, slower)
-build-mpq package ./my-patch-staging ./patch-1.MPQ -c b
+build-mpq package patch-Z.MPQ patch-Z.mpq -c b
 
 # No compression (faster, larger files)
-build-mpq package ./my-patch-staging ./patch-1.MPQ -c n
+build-mpq package patch-Z.MPQ patch-Z.mpq -c n
 ```
 
 ### 4. Validate the MPQ
@@ -141,13 +141,13 @@ build-mpq package ./my-patch-staging ./patch-1.MPQ -c n
 Check that all files in the MPQ are in valid WoW 3.3.5a directories:
 
 ```bash
-build-mpq validate ./patch-1.MPQ
+build-mpq validate patch-Z.mpq
 ```
 
 **Verbose output** (shows each file):
 
 ```bash
-build-mpq validate ./patch-1.MPQ --verbose
+build-mpq validate patch-Z.mpq --verbose
 ```
 
 ## Complete Workflow Examples
