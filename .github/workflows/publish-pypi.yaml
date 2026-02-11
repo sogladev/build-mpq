@@ -14,7 +14,7 @@ on:
             version:
                 description: 'Desired version tag'
                 required: true
-                default: '0.1.1'
+                default: '0.1.2'
 
 permissions:
   contents: read
