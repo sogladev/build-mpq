@@ -4,6 +4,17 @@ on:
   push:
     branches:
       - main
+    paths:
+    - 'build_mpq/**'
+    - 'tests/**'
+    - '*.py'
+    - '.github/workflows/test.yaml'
+  pull_request:
+    paths:
+    - 'build_mpq/**'
+    - 'tests/**'
+    - '*.py'
+    - '.github/workflows/test.yaml'
 
 jobs:
   test:
@@ -13,12 +24,14 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      # use python version from `.python-version` file
       - name: Set up Python
         uses: actions/setup-python@v6
 
       - name: Install uv
         uses: astral-sh/setup-uv@v7
+
+      - name: Sync uv environment
+        run: uv sync
 
       - name: Run tests
         run: uv run pytest
