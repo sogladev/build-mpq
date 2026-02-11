@@ -94,6 +94,8 @@ cp my_music.mp3 ./my-patch-staging/Sound/Music/
 
 **Option B: Use symbolic links** (recommended for development):
 
+> **Windows Users:** Creating symlinks on Windows requires either Administrator privileges or [Developer Mode](https://learn.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development) enabled (Windows 10+). Use `mklink` instead of `ln -s`. Alternatively, use Option A (copy files). The tool itself works fine on Windows - symlink creation is a Windows platform limitation.
+
 ```bash
 # Link to your asset library (no duplication!)
 ln -s ~/wow-assets/custom/icons/*.blp ./my-patch-staging/Interface/Icons/
