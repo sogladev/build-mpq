@@ -31,7 +31,7 @@ jobs:
         uses: astral-sh/setup-uv@v7
 
       - name: Sync uv environment
-        run: uv sync
+        run: uv sync --extra dev
 
       - name: Run tests
         run: uv run pytest
