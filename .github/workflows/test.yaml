@@ -33,5 +33,16 @@ jobs:
       - name: Sync uv environment
         run: uv sync --extra dev
 
+      - name: Install mpqcli
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/thegraydot/mpqcli/main/scripts/install.sh | bash
+          MPQ_BIN="$(command -v mpqcli || command -v mpq || true)"
+          if [ -n "$MPQ_BIN" ]; then
+            MPQ_DIR="$(dirname "$MPQ_BIN")"
+            echo "$MPQ_DIR" >> $GITHUB_PATH
+          else
+            echo "$HOME/.local/bin" >> $GITHUB_PATH
+          fi
+
       - name: Run tests
         run: uv run pytest
