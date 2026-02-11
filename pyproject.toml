@@ -3,7 +3,7 @@ name = "build-mpq"
 version = "0.1.1"
 description = "CLI tool for building and validating WoW 3.3.5a client patch MPQ files"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = []
 
 [project.scripts]
