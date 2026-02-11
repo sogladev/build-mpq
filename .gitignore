@@ -1,0 +1,13 @@
+# build-mpq
+
+*.egg-info/
+dist/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.coverage
+htmlcov/
+*.mpq
+example-patch-staging/
+.DS_Store
