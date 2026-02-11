@@ -20,7 +20,7 @@ Main features:
 
 ## Requirements
 
-- Python 3.14+
+- Python 3.10+
 - [mpqcli](https://github.com/Kanma/mpqcli) - Must be available in PATH
 
 ## Installation

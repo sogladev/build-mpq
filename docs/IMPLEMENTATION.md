@@ -139,7 +139,7 @@ The tool creates 48 directories following the WoW 3.3.5a client's hard-coded sca
 
 ## Requirements
 
-- Python 3.14+
+- Python 3.10+
 - mpqcli (must be in PATH)
 - pytest (for development)
 
