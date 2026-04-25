@@ -21,7 +21,7 @@ Main features:
 ## Requirements
 
 - Python 3.11+
-- [mpqcli](https://github.com/Kanma/mpqcli) - Must be available in PATH
+- [mpqcli](https://github.com/thegraydot/mpqcli) - Must be available in PATH
 
 ## Installation
 

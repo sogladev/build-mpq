@@ -140,7 +140,7 @@ def package_mpq(
     if not shutil.which("mpqcli"):
         raise MPQCliNotFoundError(
             "mpqcli not found in PATH. Please install mpqcli first.\n"
-            "Installation instructions: https://github.com/Kanma/mpqcli"
+            "Installation instructions: https://github.com/thegraydot/mpqcli"
         )
 
     # Remove existing MPQ if present
